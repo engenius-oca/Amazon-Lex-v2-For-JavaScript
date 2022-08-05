@@ -1,11 +1,14 @@
 # Python標準ライブラリ
 import json
 import os
+from datetime import timedelta 
+import re
 
 # サードパーティライブラリ
-from flask import Flask, redirect, request, render_template
+from flask import Flask, redirect, request, session ,render_template
 from oauthlib.oauth2 import WebApplicationClient
 import requests
+
 
 # 設定情報
 GOOGLE_CLIENT_ID = "573102128890-harbnki1ijrlpoutgnprvbr1qd3i90op.apps.googleusercontent.com"
@@ -17,12 +20,13 @@ GOOGLE_DISCOVERY_URL = (
 # Flaskセットアップ
 app = Flask(__name__)
 #セッション情報を暗号化するためのキーを設定
-app.secret_key = os.environ.get("SECRET_KEY") or os.urandom(24)
+app.secret_key = os.urandom(24)
 
 # OAuth2クライアント設定
 client = WebApplicationClient(GOOGLE_CLIENT_ID)
 
-
+#https://shigeblog221.com/flask-session/
+app.permanent_session_lifetime = timedelta(minutes=30)
 
 @app.route("/")
 def login():
@@ -77,7 +81,17 @@ def callback():
     else:
         return "User email not available or not verified by Google.", 400
 
-    return users_email
+    domain = re.search("@[\w.]+", users_email)
+
+    session["email-domain"] = domain.group()
+
+    return users_email + "    " + domain.group()
+
+@app.route("/session_check")
+def login_():
+  if "email-domain" in session: 
+    return session["email-domain"]
+  return "none"
 
 
 # @login_requiredデコレータは認証したいページに付ける
