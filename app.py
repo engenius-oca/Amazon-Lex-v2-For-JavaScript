@@ -105,10 +105,11 @@ def login_():
 def get_google_provider_cfg():
     return requests.get(GOOGLE_DISCOVERY_URL).json()
 
-
+#デバッグ用
 @app.route('/res', methods=['post'])
 def registor():
     ques = request.form.get('question')
+    print(ques)
     return jsonify(ques)
 
 @app.route('/fuck')
