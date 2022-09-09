@@ -5,9 +5,13 @@ from datetime import timedelta
 import re
 
 # サードパーティライブラリ
-from flask import Flask, redirect, request, session ,render_template
+from flask import Flask, redirect, request, session ,jsonify, render_template
+from flask_cors import CORS
 from oauthlib.oauth2 import WebApplicationClient
 import requests
+
+app = Flask(__name__)
+CORS(app)
 
 
 # 設定情報
@@ -93,11 +97,21 @@ def login_():
     return session["email-domain"]
   return "none"
 
-
 # @login_requiredデコレータは認証したいページに付ける
 
 def get_google_provider_cfg():
     return requests.get(GOOGLE_DISCOVERY_URL).json()
+
+
+@app.route('/res', methods=['post'])
+def registor():
+    ques = request.form.get('question')
+    return jsonify(ques)
+
+@app.route('/fuck')
+def fuck():
+    return render_template('test.html')
+
 
 
 if __name__ == "__main__":
