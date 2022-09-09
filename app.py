@@ -93,8 +93,11 @@ def callback():
 
 @app.route("/session_check")
 def login_():
-  if "email-domain" in session: 
-    return session["email-domain"]
+  if "email-domain" in session:
+    if session["email-domain"] == "@edu.oca.ac.jp":
+        return session["email-domain"] + " ok"
+    else:
+        return session["email-domain"] + " not"
   return "none"
 
 # @login_requiredデコレータは認証したいページに付ける
@@ -102,7 +105,7 @@ def login_():
 def get_google_provider_cfg():
     return requests.get(GOOGLE_DISCOVERY_URL).json()
 
-#デバッグ用
+
 @app.route('/res', methods=['post'])
 def registor():
     ques = request.form.get('question')
