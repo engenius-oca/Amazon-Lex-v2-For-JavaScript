@@ -114,7 +114,7 @@ def registor():
 
 @app.route('/fuck')
 def fuck():
-    return render_template('test.html')
+    return render_template('top.html')
 
 
 
