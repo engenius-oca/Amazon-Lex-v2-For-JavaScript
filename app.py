@@ -121,7 +121,8 @@ def fuck():
 
 
 if __name__ == "__main__":
-    if ide is None:
-        app.run(ssl_context="adhoc")
-    else:
-        app.run()
+    # if ide is None:
+    #     app.run(ssl_context="adhoc")
+    # else:
+    #     app.run()
+    app.run(ssl_context="adhoc")
