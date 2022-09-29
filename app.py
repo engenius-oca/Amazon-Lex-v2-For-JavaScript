@@ -10,6 +10,8 @@ from flask_cors import CORS
 from oauthlib.oauth2 import WebApplicationClient
 import requests
 
+ide = os.getenv('GITPOD_WORKSPACE_ID', None)
+
 app = Flask(__name__)
 CORS(app)
 
@@ -119,4 +121,7 @@ def fuck():
 
 
 if __name__ == "__main__":
-    app.run(ssl_context="adhoc")
+    if ide is None:
+        app.run(ssl_context="adhoc")
+    else:
+        app.run()
