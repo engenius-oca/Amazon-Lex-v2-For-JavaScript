@@ -83,7 +83,7 @@ h1{
 }
 #chat-button:focus{
     outline: 0;
-    background: #A899FF;
+    background: #a7a7a7;
 }
 
 #chat-ul{
