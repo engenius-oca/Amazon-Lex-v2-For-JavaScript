@@ -40,10 +40,8 @@ function post() {
 
         //送信完了後フォームの内容をリセット
         if(data == "success"){
-          // 一応メッセージによる処理の欄を置いとく
+          // テスト用にメッセージによる処理の欄を置いとく
           output("OK!!!", "robot", "txt");
-        } else {
-          output("NO!!!", "robot", "txt");
         }
       },
       //Ajax通信が失敗した場合のメッセージ
