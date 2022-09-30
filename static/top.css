@@ -61,7 +61,7 @@ h1{
     outline: none;
 }
 #chat-input:focus{
-    outline: 0;
+    outline: none;
 }
 /*送信ボタン*/
 #chat-button{
