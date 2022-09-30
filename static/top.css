@@ -43,9 +43,9 @@ h1{
     height: 45px;
     display: flex;
     box-sizing: border-box;
-    border-bottom: 1px solid #777;
+    /* border-bottom: 1px solid #777;
     border-left: 1px solid #777;
-    border-right: 1px solid #777;
+    border-right: 1px solid #777; */
     background-color: #eceaea;
     margin: 0 auto;
 }
