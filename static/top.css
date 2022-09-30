@@ -14,7 +14,7 @@ h1{
     height: 30px;
     width: 348px;
     border: 1px solid #777;
-    background-color: #eceaea;
+    background-color: #e0e0e0;
 }
 /*チャットのフィールド*/
 #field{
@@ -47,7 +47,7 @@ h1{
     border-bottom: 1px solid #777;
     border-left: 1px solid #777;
     border-right: 1px solid #777;
-    background-color: #eceaea;
+    background-color: #e0e0e0;
     margin: 0 auto;
 }
 /*入力する場所*/
@@ -74,7 +74,7 @@ h1{
     margin: auto ;
     margin-right: 4%; 
     font-size: 13px;
-    background: #dddddd;
+    background: #d8d8d8;
     color: black;
     display: block;
     /*デフォルトのボーダーを消す*/
