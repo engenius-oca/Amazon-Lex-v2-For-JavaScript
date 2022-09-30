@@ -114,7 +114,7 @@ def registor():
     print(ques)
     return jsonify(ques)
 
-@app.route('/test')
+@app.route('/bot')
 def fuck():
     return render_template('top.html')
 
