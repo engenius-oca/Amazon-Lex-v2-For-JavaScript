@@ -46,7 +46,7 @@ h1{
     border-bottom: 1px solid #777;
     border-left: 1px solid #777;
     border-right: 1px solid #777;
-    background-color: rgb(233, 233, 233);
+    background-color: #FFF;
     margin: 0 auto;
 }
 /*入力する場所*/
@@ -55,10 +55,15 @@ h1{
     width: 75%;
     display: block;
     font-size: 14px;
+    color: #000;
+    box-sizing: border-box;
+    border: 1px solid #777;
     padding-left: 10px;
     margin: auto 10px;
+    outline: none;
 }
 #chat-input:focus{
+    border: 1.3px solid #8873FF;
     outline: 0;
 }
 /*送信ボタン*/
