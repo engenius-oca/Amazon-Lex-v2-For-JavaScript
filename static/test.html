@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Amazon Lex for JavaScript - Sample Application (BookTrip)</title>
+	<link rel="stylesheet" href="top.css">
+    	<link rel="preconnect" href="https://fonts.googleapis.com">
+    	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1231.0.min.js"></script>
+	<style language="text/css">
+		input#wisdom {
+			padding: 4px;
+			font-size: 1em;
+			width: 400px
+		}
+
+		input::placeholder {
+			color: #ccc;
+			font-style: italic;
+		}
+
+		p.userRequest {
+			margin: 4px;
+			padding: 4px 10px 4px 10px;
+			border-radius: 4px;
+			min-width: 50%;
+			max-width: 85%;
+			float: left;
+			background-color: #7d7;
+		}
+
+		p.lexResponse {
+			margin: 4px;
+			padding: 4px 10px 4px 10px;
+			border-radius: 4px;
+			text-align: right;
+			min-width: 50%;
+			max-width: 85%;
+			float: right;
+			background-color: #bbf;
+			font-style: italic;
+		}
+
+		p.lexError {
+			margin: 4px;
+			padding: 4px 10px 4px 10px;
+			border-radius: 4px;
+			text-align: right;
+			min-width: 50%;
+			max-width: 85%;
+			float: right;
+			background-color: #f77;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Amazon Lex - BookTrip</h1>
+	<div id="conversation"></div>
+	<form id="chatform" onsubmit="return pushChat();">
+		<input type="text" id="wisdom" value="" placeholder="I need a hotel room">
+		<input type="button" value="送信" id="chat-button" onclick="return pushChat();">
+	</form>
+	<script type="text/javascript">
+		// set the focus to the input box
+		document.getElementById("wisdom").focus();
+
+		// Initialize the Amazon Cognito credentials provider
+		AWS.config.region = 'ap-northeast-1'; // Region
+		AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+		// Provide your Pool Id here
+			IdentityPoolId: 'ap-northeast-1:c9a7ff06-996a-430b-8bba-a270c925fd02',
+		});
+
+		var lexruntimev2 = new AWS.LexRuntimeV2();
+		var lexUserId = 'chatbot-demo' + Date.now();
+		var sessionAttributes = 'sdsadasd';
+
+		function pushChat() {
+
+			// if there is text to be sent...
+			var wisdomText = document.getElementById('wisdom');
+			if (wisdomText && wisdomText.value && wisdomText.value.trim().length > 0) {
+
+				// disable input to show we're sending it
+				var wisdom = wisdomText.value.trim();
+				wisdomText.value = '...';
+				wisdomText.locked = true;
+
+				// send it to the Lex runtime
+				var params = {
+					botAliasId: 'TSTALIASID',
+					botId: 'AIWMGUPGQN',
+					text: wisdom,
+					localeId: 'ja_JP',
+					sessionId: sessionAttributes
+				};
+				showRequest(wisdom);
+                                lexruntimev2.recognizeText(params, function (err, data) {
+                                          if (err) console.log(err, err.stack); // an error occurred
+                                          else     showResponse(data);           // successful response
+                                                console.log(data);
+                                        });
+
+			}
+			// we always cancel form submission
+			return false;
+		}
+
+		function showRequest(daText) {
+
+			var conversationDiv = document.getElementById('conversation');
+			var requestPara = document.createElement("P");
+			requestPara.className = 'userRequest';
+			requestPara.appendChild(document.createTextNode(daText));
+			conversationDiv.appendChild(requestPara);
+			conversationDiv.scrollTop = conversationDiv.scrollHeight;
+		}
+
+		function showError(daText) {
+
+			var conversationDiv = document.getElementById('conversation');
+			var errorPara = document.createElement("P");
+			errorPara.className = 'lexError';
+			errorPara.appendChild(document.createTextNode(daText));
+			conversationDiv.appendChild(errorPara);
+			conversationDiv.scrollTop = conversationDiv.scrollHeight;
+		}
+                function showResponse(lexResponse) {
+
+                        var conversationDiv = document.getElementById('conversation');
+                        var responsePara = document.createElement("P");
+                        responsePara.className = 'lexResponse';
+                        if (lexResponse.messages) {
+                                responsePara.appendChild(document.createTextNode(lexResponse.messages[0]['content']));
+                                responsePara.appendChild(document.createElement('br'));
+                        }
+                        if (lexResponse.dialogState === 'ReadyForFulfillment') {
+                                responsePara.appendChild(document.createTextNode(
+                                        'Ready for fulfillment'));
+                                // TODO:  show slot values
+                        } else {
+                                console.log(lexResponse['sessionState']);
+                                /* responsePara.appendChild(document.createTextNode(
+                                        '(' + lexResponse['sessionState']['originatingRequestId'] + ')')); */
+                        }
+                        conversationDiv.appendChild(responsePara);
+                        conversationDiv.scrollTop = conversationDiv.scrollHeight;
+
+                        
+                }
+	</script>
+</body>
+
+</html>
