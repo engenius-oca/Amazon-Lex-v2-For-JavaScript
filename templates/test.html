@@ -3,23 +3,26 @@
 
 <head>
 	<title>Amazon Lex for JavaScript - Sample Application (BookTrip)</title>
-	<link rel="stylesheet" href="top.css">
+	<link rel="stylesheet" href="../static/top.css">
     	<link rel="preconnect" href="https://fonts.googleapis.com">
     	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
 	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1231.0.min.js"></script>
 	<style language="text/css">
+
+		/* 入力欄のレイアウト */
 		input#wisdom {
 			padding: 4px;
 			font-size: 1em;
-			width: 400px
 		}
 
+		/* 入力欄のプレースホルダのレイアウト */
 		input::placeholder {
 			color: #ccc;
 			font-style: italic;
 		}
 
+		/* 質問表示のレイアウト */
 		p.userRequest {
 			margin: 4px;
 			padding: 4px 10px 4px 10px;
@@ -30,6 +33,7 @@
 			background-color: #7d7;
 		}
 
+		/* 返信表示のレイアウト */
 		p.lexResponse {
 			margin: 4px;
 			padding: 4px 10px 4px 10px;
@@ -41,7 +45,8 @@
 			background-color: #bbf;
 			font-style: italic;
 		}
-
+		
+		/* エラー表示のレイアウト */
 		p.lexError {
 			margin: 4px;
 			padding: 4px 10px 4px 10px;
@@ -63,13 +68,13 @@
 		<input type="button" value="送信" id="chat-button" onclick="return pushChat();">
 	</form>
 	<script type="text/javascript">
-		// set the focus to the input box
+		// 入力ボックスにフォーカスを設定
 		document.getElementById("wisdom").focus();
 
-		// Initialize the Amazon Cognito credentials provider
+		// Amazon Cognito 認証情報プロバイダーを初期化
 		AWS.config.region = 'ap-northeast-1'; // Region
 		AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-		// Provide your Pool Id here
+		// ここにプール ID を入力
 			IdentityPoolId: 'ap-northeast-1:c9a7ff06-996a-430b-8bba-a270c925fd02',
 		});
 
@@ -79,16 +84,16 @@
 
 		function pushChat() {
 
-			// if there is text to be sent...
+			// 送信するテキストがある場合の処理
 			var wisdomText = document.getElementById('wisdom');
 			if (wisdomText && wisdomText.value && wisdomText.value.trim().length > 0) {
 
-				// disable input to show we're sending it
+				// 入力を無効にして、送信していることを示す
 				var wisdom = wisdomText.value.trim();
 				wisdomText.value = '...';
 				wisdomText.locked = true;
 
-				// send it to the Lex runtime
+				// Lex ランタイムに送信
 				var params = {
 					botAliasId: 'TSTALIASID',
 					botId: 'AIWMGUPGQN',
@@ -98,13 +103,13 @@
 				};
 				showRequest(wisdom);
                                 lexruntimev2.recognizeText(params, function (err, data) {
-                                          if (err) console.log(err, err.stack); // an error occurred
-                                          else     showResponse(data);           // successful response
+                                          if (err) console.log(err, err.stack); // エラーが発生しました
+                                          else     showResponse(data);           // 正常な応答
                                                 console.log(data);
                                         });
 
 			}
-			// we always cancel form submission
+			// フォームの送信は常にキャンセルされる
 			return false;
 		}
 
