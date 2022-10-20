@@ -22,7 +22,19 @@ h1{
     position: absolute;
     display: inline-block;
     right: 800px;
-    top: 10px;
+    top: 12px;
+    width: 26px;
+    height: 26px;
+}
+#login-button:focus{
+    outline: 0;
+    background: #a7a7a7;
+}
+#login-img{
+    position: absolute;
+    display: inline-block;
+    right: 0px;
+    top: -2px;
     width: 26px;
     height: 26px;
 }
