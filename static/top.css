@@ -14,6 +14,8 @@ h1{
     height: 30px;
     width: 348px;
     border: 1px solid #777;
+    font-weight: 100;
+    background-color: #e0e0e0;
 }
 /*チャットのフィールド*/
 #conversation{
@@ -23,7 +25,6 @@ h1{
     box-sizing: border-box;
     border-left: 1px solid #777;
     border-right: 1px solid #777;
-    background-color: #EEE;
     margin: 0 auto;
     background-color: rgb(250, 250, 250);
     /*横向きのスクロール禁止*/
@@ -73,7 +74,7 @@ h1{
     margin: auto ;
     margin-right: 4%; 
     font-size: 13px;
-    background: #cecece;
+    background: #c2c2c2;
     color: black;
     display: block;
     /*デフォルトのボーダーを消す*/
