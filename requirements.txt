@@ -1,5 +1,0 @@
-requests
-Flask
-oauthlib
-pyOpenSSL
-flask_cors

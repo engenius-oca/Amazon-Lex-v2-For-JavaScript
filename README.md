@@ -1,4 +1,9 @@
 # google-client-app
-Flask, Flask-Login, Login with Google, App setup as Google Client
 
-https://remix-yh.net/680/
+flask廃止のためライブプレビューには以下のコマンドを叩く必要あり
+
+```bash
+python -m http.server 8000
+```
+本番環境のサーバーではクライアントサイドの言語以外使えません
+サーバーサイド言語を使う場合はlambdaを利用してください
