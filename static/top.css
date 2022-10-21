@@ -6,7 +6,7 @@
     font-family: 'Noto Serif JP', serif;
 }
 h1{
-    position: relative;
+    position: static;
     font-size: 20px;
     text-align: center;
     /* margin-top: 10px; */

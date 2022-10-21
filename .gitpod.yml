@@ -8,4 +8,4 @@ ports:
   - port: 6080
 tasks:
   - init: make init
-    command: make run
+    command: make run & python -m http.server 8000
