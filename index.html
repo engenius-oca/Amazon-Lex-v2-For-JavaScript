@@ -3,6 +3,7 @@
 
 <head>
 	<title>Amazon Lex for JavaScript - Sample Application (BookTrip)</title>
+	<meta charset="UTF-8">
 	<link rel="stylesheet" href="../static/top.css">
     	<link rel="preconnect" href="https://fonts.googleapis.com">
     	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,10 +72,11 @@
 		<input type="button" value="送信" id="chat-button" onclick="return pushChat();">
 	</form>
 	<script type="text/javascript">
+		var params = new URL(window.location.href).searchParams
 		// 入力ボックスにフォーカスを設定
 		document.getElementById("wisdom").focus();
 
-		// Amazon Cognito 認証情報プロバイダーを初期化
+		// Amazon Cognito 認証情報を初期化
 		AWS.config.region = 'ap-northeast-1'; // Region
 		AWS.config.credentials = new AWS.CognitoIdentityCredentials({
 		// ここにプール ID を入力
@@ -83,7 +85,7 @@
 
 		var lexruntimev2 = new AWS.LexRuntimeV2();
 		var lexUserId = 'chatbot-demo' + Date.now();
-		var sessionAttributes = 'sdsadasd';
+		var sessionAttributes = params.get('code');
 
 		function pushChat() {
 
