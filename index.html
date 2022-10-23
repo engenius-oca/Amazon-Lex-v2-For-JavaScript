@@ -4,7 +4,7 @@
 <head>
 	<title>Amazon Lex for JavaScript - Sample Application (BookTrip)</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="../static/top.css">
+	<link rel="stylesheet" href="top.css">
     	<link rel="preconnect" href="https://fonts.googleapis.com">
     	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
@@ -64,9 +64,11 @@
 </head>
 
 <body>
-	<h1>チャットボット 学校情報</h1>
-	<button id="login-button"><img src="../static/images/login_button.png" id="login-img" alt="LoginButton" title="LoginButton"></button>
-	<div id="conversation"></div>
+    <div id="chathead">
+	    <h1>チャットボット 学校情報</h1>
+	    <button id="login-button"><img src="../static/images/login_button.png" id="login-img" title="LoginButton"></button>
+	</div>
+    <div id="conversation"></div>
 	<form id="chatform" onsubmit="return pushChat();">
 		<input type="text" id="wisdom" value="" placeholder="質問を入力してください">
 		<input type="button" value="送信" id="chat-button" onclick="return pushChat();">
