@@ -74,7 +74,6 @@
 		<input type="button" value="送信" id="chat-button" onclick="return pushChat();">
 	</form>
 	<script type="text/javascript">
-		var params = new URL(window.location.href).searchParams
 		// 入力ボックスにフォーカスを設定
 		document.getElementById("wisdom").focus();
 
@@ -87,8 +86,16 @@
 
 		var lexruntimev2 = new AWS.LexRuntimeV2();
 		var lexUserId = 'chatbot-demo' + Date.now();
-		// var sessionAttributes = params.get('code');
-		var sessionAttributes = 'gjgji';
+
+		var params = new URL(window.location.href).searchParams
+
+		if(params.get('code') != null){
+			var sessionAttributes = params.get('code');
+			console.log("YES")
+		}else{
+			var sessionAttributes = "None";
+			console.log("NO")
+		}
 
 		function pushChat() {
 
