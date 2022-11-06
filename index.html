@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="static/top.css">
+	<link rel="stylesheet" href="/static/top.css">
 	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1231.0.min.js"></script>
 	<style language="text/css">
 
@@ -66,8 +66,9 @@
 
 <body>
     <div id="chathead">
-	    <h1>チャットボット 学校情報adf</h1>
-	    <a href='https://bcwvskcjj0.execute-api.ap-northeast-1.amazonaws.com/dev/gen-auth-url' id="login-button"><i class="fa-solid fa-right-to-bracket"></i></a>
+	    <h1 id="title">チャットボット 学校情報fatdrf</h1>
+	    <!-- <a href='https://bcwvskcjj0.execute-api.ap-northeast-1.amazonaws.com/dev/gen-auth-url'><i class="fa-solid fa-right-to-bracket"></i></a> -->
+		<i class="fa-solid fa-right-to-bracket" onclick="location.href='https://bcwvskcjj0.execute-api.ap-northeast-1.amazonaws.com/dev/gen-auth-url'"></i>
 	</div>
     <div id="conversation"></div>
 	<form id="chatform" onsubmit="return pushChat();">
