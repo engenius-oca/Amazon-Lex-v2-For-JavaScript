@@ -6,7 +6,8 @@
     font-family: 'Noto Serif JP', serif;
 }
 #chathead{
-    display: flex;
+    /* display: flex; */
+    position: static;
     font-size: 20px;
     text-align: center;
     margin: 0 auto;
@@ -20,6 +21,7 @@
 }
 
 h1{
+    position: fixed;
     font-size: 20px;
     text-align: center;
     margin: 0 auto;
@@ -30,14 +32,16 @@ h1{
     /* border: 1px solid #777; */
     /* background-color: #e0e0e0; */
 }
+
 #login-button{
+    position: fixed;
     margin: auto;
     display: block;
     right: 800px;
     top: 12px;
     width: 26px;
     height: 26px;
-    margin-right: 10px;
+    margin-right: 0px;
 }
 #login-button:focus{
     outline: 0;
