@@ -21,14 +21,13 @@
 }
 
 h1{
-    position: fixed;
     font-size: 20px;
     text-align: center;
     margin: 0 auto;
     height: 30px;
     width: 348px;
     font-weight: 100;
-    color: white;
+    color: rgb(94, 59, 59);
     /* border: 1px solid #777; */
     /* background-color: #e0e0e0; */
 }
