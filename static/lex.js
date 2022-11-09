@@ -16,10 +16,8 @@ var params = new URL(window.location.href).searchParams
 
 if(params.get('code') != null){
     var sessionAttributes = params.get('code');
-    console.log("YES")
 }else{
     var sessionAttributes = "None";
-    console.log("NO")
 }
 
 function pushChat() {
