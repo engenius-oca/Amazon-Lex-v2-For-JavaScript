@@ -87,7 +87,18 @@ function showResponse(lexResponse) {
         var responsePara = document.createElement("P");
         responsePara.className = 'lexResponse';
         if (lexResponse.messages) {
-                responsePara.appendChild(document.createTextNode(lexResponse.messages[0]['content']));
+                console.log(lexResponse.messages[0]['content']);
+                // responsePara.appendChild(document.createTextNode(lexResponse.messages[0]['content']));
+                // advice from @MarryMary
+                var lex_res = lexResponse.messages[0]['content'];
+                var str = lex_res.split('<br>');
+                str.forEach(function(elem) {
+                    console.log(elem)
+                    responsePara.appendChild(document.createTextNode(elem))
+                    // document.createTextNode(elem);
+                    document.createElement( 'br' );
+                });
+
                 responsePara.appendChild(document.createElement('br'));
         }
         if (lexResponse.dialogState === 'ReadyForFulfillment') {
