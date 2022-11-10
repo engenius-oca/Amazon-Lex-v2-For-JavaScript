@@ -12,12 +12,15 @@ AWS.config.credentials = new AWS.CognitoIdentityCredentials({
 var lexruntimev2 = new AWS.LexRuntimeV2();
 var lexUserId = 'chatbot-demo' + Date.now();
 
-var params = new URL(window.location.href).searchParams
-
-if(params.get('code') != null){
-    var sessionAttributes = params.get('code');
+const params = new URLSearchParams(location.hash.slice(1));
+if(params.get("access_token") != null){
+    tokens = params.get("access_token").split('.');
+    const obj = JSON.parse(atob(tokens[1]));
+    var sessionAttributes = obj['username']
+    console.log(obj['username'])
 }else{
     var sessionAttributes = "None";
+    console.log("None")
 }
 
 function pushChat() {
