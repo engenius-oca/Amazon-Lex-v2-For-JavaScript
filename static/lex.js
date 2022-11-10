@@ -23,7 +23,7 @@ if(acces_token != null){
     var sessionAttributes = obj['username']
     console.log(obj['username'])
 
-    history.pushState({}, '', '');
+    location.hash = '';
 
 }else{
     var sessionAttributes = "None";
