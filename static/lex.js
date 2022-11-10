@@ -85,13 +85,10 @@ function showResponse(lexResponse) {
 
         var conversationDiv = document.getElementById('conversation');
         var responsePara = document.createElement("P");
-        var val="tmp";
-        responsePara.setAttribute("id",val);
         responsePara.className = 'lexResponse';
         if (lexResponse.messages) {
-            document.getElementById("tmp").createTextNode(lexResponse.messages[0]['content']);
-                // responsePara.appendChild(document.createTextNode(lexResponse.messages[0]['content']));
-                // responsePara.appendChild(document.createElement('br'));
+                responsePara.appendChild(document.createTextNode(lexResponse.messages[0]['content']));
+                responsePara.appendChild(document.createElement('br'));
         }
         if (lexResponse.dialogState === 'ReadyForFulfillment') {
                 responsePara.appendChild(document.createTextNode(
