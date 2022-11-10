@@ -94,9 +94,9 @@ function showResponse(lexResponse) {
                 var str = lex_res.split('<br>');
                 str.forEach(function(elem) {
                     console.log(elem)
-                    responsePara.appendChild(document.createTextNode(elem))
+                    responsePara.appendChild(document.createTextNode(elem));
                     // document.createTextNode(elem);
-                    document.createElement( 'br' );
+                    responsePara.appendChild(document.createElement( 'br' ));
                 });
 
                 responsePara.appendChild(document.createElement('br'));
