@@ -6,47 +6,78 @@
     font-family: 'Noto Serif JP', serif;
 }
 
+/* 画面の高さを画面いっぱいに固定 */
+body{
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* PC版 */
 #chathead{
     font-size: 20px;
     text-align: center;
     margin: 0 auto;
-    margin-top: 10px;
-    height: 30px;
-    width: 348px;
+    /* 高さ4vh、幅を100vwでいっぱいいっぱいに */
+    height: 4vh;
+    width: 100vw;
     border: 1px solid #777;
     font-weight: 100;
     background-color: #5d7591;
-    position: relative;
 }
 
 h1{
-    font-size: 20px;
+    font-size: 150%;
     text-align: center;
-    height: 30px;
-    width: 348px;
     font-weight: 100;
-    color: rgb(255, 255, 255);
+    color: white;
+    margin: 0 auto;
+}
+
+/* スマホ版 */
+@media (max-width: 1000px) {
+    #chathead{
+        font-size: 25px;
+        text-align: center;
+        margin: 0 auto;
+        /* 高さ4vh、幅を100vwでいっぱいいっぱいに */
+        height: 4vh;
+        width: 100vw;
+        border: 1px solid #777;
+        font-weight: 100;
+        background-color: #5d7591;
+    }
+
+    h1{
+        font-size: 150%;
+        text-align: center;
+        font-weight: 100;
+        color: white;
+        margin: 0 auto;
+        margin-top: 0.6vh;
+    }
 }
 
 i {
     position: fixed;
-    margin: auto;
+    position: absolute;
     display: block;
     color: white;
-    right: 800px;
-    top: 12px;
-    width: 26px;
-    height: 26px;
-    margin-right: 0px;
-    position: absolute;
-    top: 6px;
-    right: 10px;
+    margin: auto;
+    margin-right: 1px;
+    right: 1vh;
+    top: 1.5vh;
+}
+
+i:focus{
+    outline: 0;
+    background: #a7a7a7;
 }
 
 /*チャットのフィールド*/
 #conversation{
-    width: 350px;
-    height: 550px;
+    /* 高さ指定はすべての要素で100vhになるよう調整、widthは幅いっぱいに調整 */
+    width: 100vw;
+    height: 90vh;
     padding: 7px 0 14px;
     box-sizing: border-box;
     border-left: 1px solid #777;
@@ -67,8 +98,9 @@ i {
     display:none;
 }
 #chatform{
-    width: 350px;
-    height: 45px;
+    /* 高さ指定はすべての要素で100vhになるよう調整、widthは幅いっぱいに調整 */
+    width: 100vw;
+    height: 6vh;
     display: flex;
     box-sizing: border-box;
     border-bottom: 1px solid #777;
@@ -79,10 +111,9 @@ i {
 }
 /*入力する場所*/
 #wisdom{
-    height: 25px;
+    height: 75%;
     width: 75%;
     display: block;
-    font-size: 14px;
     color: #000;
     box-sizing: border-box;
     border: 1px solid rgb(255, 255, 255);
@@ -96,11 +127,11 @@ i {
 /*送信ボタン*/
 #chat-button{
     cursor: pointer;
-    height: 25px;
+    height: 75%;
     width: 15%;
     margin: auto ;
     margin-right: 4%; 
-    font-size: 13px;
+    font-size: 190%;
     background: #5d7591;
     color: rgb(233, 233, 233);
     display: block;
@@ -187,4 +218,109 @@ i {
 }
 .right{
   text-align: right;
+}
+
+/* 入力欄のレイアウト */
+input#wisdom {
+    font-size: 190%;
+}
+
+/* PC版 */
+input::placeholder {
+    color: #ccc;
+    font-style: italic;
+    font-size: 100%;
+}
+/* スマホ版 */
+@media (max-width: 1000px) {
+    input::placeholder {
+        color: #ccc;
+        font-style: italic;
+        font-size: 150%;
+    }
+}
+
+/* PC版 */
+/* 質問表示のレイアウト */
+p.userRequest {
+    margin: 4px;
+    padding: 1%;
+    border-radius: 4px;
+    min-width: 50%;
+    max-width: 85%;
+    float: left;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-size: 30px;
+}
+
+/* 返信表示のレイアウト */
+p.lexResponse {
+    margin: 4px;
+    padding: 1%;
+    border-radius: 4px;
+    text-align: right;
+    min-width: 50%;
+    max-width: 85%;
+    float: right;
+    background-color: #68819e;
+    color: white;
+    font-style: italic;
+    font-size: 30px;
+}
+
+/* エラー表示のレイアウト */
+p.lexError {
+    margin: 4px;
+    padding: 1%;
+    border-radius: 4px;
+    text-align: right;
+    min-width: 50%;
+    max-width: 85%;
+    float: right;
+    background-color: #f77;
+    font-size: 30px;
+}
+/* スマホ版 */
+@media (max-width: 1000px) {
+    /* 質問表示のレイアウト */
+    p.userRequest {
+        margin: 4px;
+        padding: 1%;
+        border-radius: 4px;
+        min-width: 50%;
+        max-width: 85%;
+        float: left;
+        background-color: rgb(255, 255, 255);
+        color: black;
+        font-size: 40px;
+    }
+
+    /* 返信表示のレイアウト */
+    p.lexResponse {
+        margin: 4px;
+        padding: 1%;
+        border-radius: 4px;
+        text-align: right;
+        min-width: 50%;
+        max-width: 85%;
+        float: right;
+        background-color: #68819e;
+        color: white;
+        font-style: italic;
+        font-size: 40px;
+    }
+
+    /* エラー表示のレイアウト */
+    p.lexError {
+        margin: 4px;
+        padding: 1%;
+        border-radius: 4px;
+        text-align: right;
+        min-width: 50%;
+        max-width: 85%;
+        float: right;
+        background-color: #f77;
+        font-size: 40px;
+    }
 }
