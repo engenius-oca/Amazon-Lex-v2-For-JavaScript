@@ -12,8 +12,10 @@ AWS.config.credentials = new AWS.CognitoIdentityCredentials({
 var lexruntimev2 = new AWS.LexRuntimeV2();
 var lexUserId = 'chatbot-demo' + Date.now();
 
-const params = new URLSearchParams(location.hash.slice(1));
-let acces_token = params.get("access_token")
+const acces_token = (() => {
+    const params = new URLSearchParams(location.hash.slice(1));
+    return params.get("access_token");
+  })();
 
 console.log(acces_token)
 
