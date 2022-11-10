@@ -14,7 +14,6 @@ body{
 
 /* PC版 */
 #chathead{
-    font-size: 20px;
     text-align: center;
     margin: 0 auto;
     /* 高さ4vh、幅を100vwでいっぱいいっぱいに */
@@ -26,7 +25,7 @@ body{
 }
 
 h1{
-    font-size: 150%;
+    font-size: 3vh;
     text-align: center;
     font-weight: 100;
     color: white;
@@ -34,12 +33,11 @@ h1{
 }
 
 /* スマホ版 */
-@media (max-width: 1000px) {
+/* @media (max-width: 1000px) {
     #chathead{
         font-size: 25px;
         text-align: center;
         margin: 0 auto;
-        /* 高さ4vh、幅を100vwでいっぱいいっぱいに */
         height: 4vh;
         width: 100vw;
         border: 1px solid #777;
@@ -55,17 +53,17 @@ h1{
         margin: 0 auto;
         margin-top: 0.6vh;
     }
-}
+} */
 
 i {
     position: fixed;
-    position: absolute;
     display: block;
     color: white;
     margin: auto;
     margin-right: 1px;
     right: 1vh;
     top: 1.5vh;
+    font-size: 2.5vh;
 }
 
 i:focus{
@@ -131,7 +129,7 @@ i:focus{
     width: 15%;
     margin: auto ;
     margin-right: 4%; 
-    font-size: 190%;
+    font-size: 150%;
     background: #5d7591;
     color: rgb(233, 233, 233);
     display: block;
@@ -222,7 +220,7 @@ i:focus{
 
 /* 入力欄のレイアウト */
 input#wisdom {
-    font-size: 190%;
+    font-size: 150%;
 }
 
 /* PC版 */
@@ -232,13 +230,13 @@ input::placeholder {
     font-size: 100%;
 }
 /* スマホ版 */
-@media (max-width: 1000px) {
+/* @media (max-width: 1000px) {
     input::placeholder {
         color: #ccc;
         font-style: italic;
         font-size: 150%;
     }
-}
+} */
 
 /* PC版 */
 /* 質問表示のレイアウト */
@@ -282,8 +280,7 @@ p.lexError {
     font-size: 30px;
 }
 /* スマホ版 */
-@media (max-width: 1000px) {
-    /* 質問表示のレイアウト */
+/* @media (max-width: 1000px) {
     p.userRequest {
         margin: 4px;
         padding: 1%;
@@ -296,7 +293,6 @@ p.lexError {
         font-size: 40px;
     }
 
-    /* 返信表示のレイアウト */
     p.lexResponse {
         margin: 4px;
         padding: 1%;
@@ -311,7 +307,6 @@ p.lexError {
         font-size: 40px;
     }
 
-    /* エラー表示のレイアウト */
     p.lexError {
         margin: 4px;
         padding: 1%;
@@ -323,4 +318,4 @@ p.lexError {
         background-color: #f77;
         font-size: 40px;
     }
-}
+} */
