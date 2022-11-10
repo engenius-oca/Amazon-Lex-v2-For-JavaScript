@@ -13,8 +13,12 @@ var lexruntimev2 = new AWS.LexRuntimeV2();
 var lexUserId = 'chatbot-demo' + Date.now();
 
 const params = new URLSearchParams(location.hash.slice(1));
-if(params.get("access_token") != null){
-    tokens = params.get("access_token").split('.');
+let acces_token = params.get("access_token")
+
+console.log(acces_token)
+
+if(acces_token != null){
+    tokens = acces_token.split('.');
     const obj = JSON.parse(atob(tokens[1]));
     var sessionAttributes = obj['username']
     console.log(obj['username'])
