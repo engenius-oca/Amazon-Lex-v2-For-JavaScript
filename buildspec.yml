@@ -1,9 +1,15 @@
-
-version: 0.1
+version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      nodejs: 10
   pre_build:
     commands:
-      - echo Logging in to Amazon S3...
+      - echo Installing source NPM dependencies...
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Distributing to S3...
       - aws s3 sync --exact-timestamps --region ap-northeast-1 ./ s3://oca-frontend --exclude ".git*" --exclude ".gitpod.yml" --exclude "README.md" --delete
 Footer
