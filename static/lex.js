@@ -87,8 +87,8 @@ function showResponse(lexResponse) {
         var responsePara = document.createElement("P");
         responsePara.className = 'lexResponse';
         if (lexResponse.messages) {
-            (responsePara.appendChild(lexResponse.messages[0]['content']);
-                responsePara.appendChild(document.createElement('br'));
+            responsePara.appendChild(lexResponse.messages[0]['content']);
+            responsePara.appendChild(document.createElement('br'));
         }
         if (lexResponse.dialogState === 'ReadyForFulfillment') {
                 responsePara.appendChild(document.createTextNode(
