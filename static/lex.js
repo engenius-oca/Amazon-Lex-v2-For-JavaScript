@@ -86,7 +86,7 @@ function showResponse(lexResponse) {
         var conversationDiv = document.getElementById('conversation');
         var responsePara = document.createElement("P");
         var val="tmp";
-        responsePara[0].setAttribute("id",val);
+        responsePara.setAttribute("id",val);
         responsePara.className = 'lexResponse';
         if (lexResponse.messages) {
             document.getElementById("tmp").innerText(lexResponse.messages[0]['content']);
