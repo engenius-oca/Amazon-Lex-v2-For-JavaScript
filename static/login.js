@@ -14,15 +14,20 @@ const logout = () => {
   location.href = cognitoLogoutUrl;
 }
 
-const idToken = (() => {
-  var params = new URL(window.location.href).searchParams
+// const idToken = (() => {
+//   var params = new URL(window.location.href).searchParams
 
-  if(params.get('code') != null){
-      console.log("YES")
-  }else{
-      console.log("NO")
-  }
-  return params.get('code');
+//   if(params.get('code') != null){
+//       console.log("YES")
+//   }else{
+//       console.log("NO")
+//   }
+//   return params.get('code');
+// })();
+
+const idToken = (() => {
+  const params = new URLSearchParams(location.hash.slice(1));
+  return params.get("access_token");
 })();
 
 let username = '';
@@ -39,9 +44,9 @@ console.log(idToken)
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
     IdentityPoolId: cognitoIdentityPoolId,
     Logins: {
-      'accounts.google.com': idToken
+      [`cognito-idp.${awsRegion}.amazonaws.com/${cognitoUserPoolId}`]: idToken,
     },
-    region: 'awsRegion'
+    region: awsRegion
 });
 
 AWS.config.credentials.get(function() {
