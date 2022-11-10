@@ -89,7 +89,7 @@ function showResponse(lexResponse) {
         responsePara.setAttribute("id",val);
         responsePara.className = 'lexResponse';
         if (lexResponse.messages) {
-            document.getElementById("tmp").textContent(lexResponse.messages[0]['content']);
+            document.getElementById("tmp").createTextNode(lexResponse.messages[0]['content']);
                 // responsePara.appendChild(document.createTextNode(lexResponse.messages[0]['content']));
                 // responsePara.appendChild(document.createElement('br'));
         }
