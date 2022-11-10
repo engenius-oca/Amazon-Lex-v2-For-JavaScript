@@ -91,7 +91,7 @@ function showResponse(lexResponse) {
         if (lexResponse.messages) {
             document.getElementById("tmp").innerText(lexResponse.messages[0]['content']);
                 // responsePara.appendChild(document.createTextNode(lexResponse.messages[0]['content']));
-                responsePara.appendChild(document.createElement('br'));
+                // responsePara.appendChild(document.createElement('br'));
         }
         if (lexResponse.dialogState === 'ReadyForFulfillment') {
                 responsePara.appendChild(document.createTextNode(
