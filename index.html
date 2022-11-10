@@ -8,59 +8,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="/static/top.css">
-	<style language="text/css">
-
-		/* 入力欄のレイアウト */
-		input#wisdom {
-			padding: 4px;
-			font-size: 1em;
-		}
-
-		/* 入力欄のプレースホルダのレイアウト */
-		input::placeholder {
-			color: #ccc;
-			font-style: italic;
-		}
-
-		/* 質問表示のレイアウト */
-		p.userRequest {
-			margin: 4px;
-			padding: 4px 10px 4px 10px;
-			border-radius: 4px;
-			min-width: 50%;
-			max-width: 85%;
-			float: left;
-			background-color: rgb(255, 255, 255);
-			color: black;
-		}
-
-		/* 返信表示のレイアウト */
-		p.lexResponse {
-			margin: 4px;
-			padding: 4px 10px 4px 10px;
-			border-radius: 4px;
-			text-align: right;
-			min-width: 50%;
-			max-width: 85%;
-			float: right;
-			background-color: #68819e;
-			color: white;
-			font-style: italic;
-		}
-		
-		/* エラー表示のレイアウト */
-		p.lexError {
-			margin: 4px;
-			padding: 4px 10px 4px 10px;
-			border-radius: 4px;
-			text-align: right;
-			min-width: 50%;
-			max-width: 85%;
-			float: right;
-			background-color: #f77;
-		}
-	</style>
+	<link rel="stylesheet" href="./static/top.css">
 </head>
 
 <body>
@@ -76,6 +24,6 @@
 	</form>
 
 	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1231.0.min.js"></script>
-	<script src="/static/lex.js"></script>
+	<script src="./static/lex.js"></script>
 </body>
 </html>
