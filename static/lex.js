@@ -17,13 +17,14 @@ const acces_token = (() => {
     return params.get("access_token");
   })();
 
-console.log(acces_token)
-
 if(acces_token != null){
     tokens = acces_token.split('.');
     const obj = JSON.parse(atob(tokens[1]));
     var sessionAttributes = obj['username']
     console.log(obj['username'])
+
+    history.pushState({}, '', '');
+
 }else{
     var sessionAttributes = "None";
     console.log("None")
