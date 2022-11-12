@@ -5,4 +5,4 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Distributing to S3...
-      - aws s3 sync --exact-timestamps --region ap-northeast-1 ./ s3://oca-frontend --exclude ".git*" --exclude ".gitpod.yml" --exclude "README.md" --exclude "buildspec.yml"  --delete
+      - aws s3 sync --exact-timestamps --region ap-northeast-1 ./ s3://oca-frontend --exclude ".git*" --exclude ".gitpod.yml" --exclude "README.md" --exclude "buildspec.yml" --exclude "frontend.drawio"  --delete
