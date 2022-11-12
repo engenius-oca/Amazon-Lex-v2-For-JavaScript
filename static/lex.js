@@ -50,11 +50,11 @@ function pushChat() {
             sessionId: sessionAttributes
         };
         showRequest(wisdom);
-                        lexruntimev2.recognizeText(params, function (err, data) {
-                                    if (err) console.log(err, err.stack); // エラーが発生しました
-                                    else     showResponse(data);           // 正常な応答
-                                        console.log(data);
-                                });
+        lexruntimev2.recognizeText(params, function (err, data) {
+                    if (err) console.log(err, err.stack); // エラーが発生しました
+                    else     showResponse(data);           // 正常な応答
+                        console.log(data);
+                });
 
     }
     // フォームの送信は常にキャンセルされる
@@ -96,7 +96,7 @@ function showResponse(lexResponse) {
                     console.log(elem)
                     responsePara.appendChild(document.createTextNode(elem));
                     // document.createTextNode(elem);
-                    responsePara.appendChild(document.createElement( 'br' ));
+                    // responsePara.appendChild(document.createElement( 'br' ));
                 });
 
                 responsePara.appendChild(document.createElement('br'));
