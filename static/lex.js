@@ -50,11 +50,11 @@ function pushChat() {
             sessionId: sessionAttributes
         };
         showRequest(wisdom);
-                        lexruntimev2.recognizeText(params, function (err, data) {
-                                    if (err) console.log(err, err.stack); // エラーが発生しました
-                                    else     showResponse(data);           // 正常な応答
-                                        console.log(data);
-                                });
+        lexruntimev2.recognizeText(params, function (err, data) {
+                    if (err) console.log(err, err.stack); // エラーが発生しました
+                    else     showResponse(data);           // 正常な応答
+                        console.log(data);
+                });
 
     }
     // フォームの送信は常にキャンセルされる
@@ -87,7 +87,18 @@ function showResponse(lexResponse) {
         var responsePara = document.createElement("P");
         responsePara.className = 'lexResponse';
         if (lexResponse.messages) {
-                responsePara.appendChild(document.createTextNode(lexResponse.messages[0]['content']));
+                console.log(lexResponse.messages[0]['content']);
+                // responsePara.appendChild(document.createTextNode(lexResponse.messages[0]['content']));
+                // advice from @MarryMary
+                var lex_res = lexResponse.messages[0]['content'];
+                var str = lex_res.split('<br>');
+                str.forEach(function(elem) {
+                    console.log(elem)
+                    responsePara.appendChild(document.createTextNode(elem));
+                    // document.createTextNode(elem);
+                    // responsePara.appendChild(document.createElement( 'br' ));
+                });
+
                 responsePara.appendChild(document.createElement('br'));
         }
         if (lexResponse.dialogState === 'ReadyForFulfillment') {
