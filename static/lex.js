@@ -96,10 +96,10 @@ function showResponse(lexResponse) {
                     console.log(elem)
                     responsePara.appendChild(document.createTextNode(elem));
                     // document.createTextNode(elem);
-                    // responsePara.appendChild(document.createElement( 'br' ));
+                    responsePara.appendChild(document.createElement( 'br' ));
                 });
 
-                responsePara.appendChild(document.createElement('br'));
+               // responsePara.appendChild(document.createElement('br'));
         }
         if (lexResponse.dialogState === 'ReadyForFulfillment') {
                 responsePara.appendChild(document.createTextNode(
