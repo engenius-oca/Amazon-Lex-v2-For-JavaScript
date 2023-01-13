@@ -1,4 +1,4 @@
-// 
+// cognitoへのリダイレクト(ログインのため)
 function urlRedirect () {
     CognitoRegion = "ap-northeast-1"
     CognitoUserPoolClient = "41o2dh4aemkpcfcvkh6utu95n"
@@ -125,5 +125,4 @@ function showResponse(lexResponse) {
         conversationDiv.appendChild(responsePara);
         conversationDiv.scrollTop = conversationDiv.scrollHeight;
 
-        
 }
