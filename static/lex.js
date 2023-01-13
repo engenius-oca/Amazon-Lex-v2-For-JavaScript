@@ -1,3 +1,15 @@
+// 
+function urlRedirect () {
+    CognitoRegion = "ap-northeast-1"
+    CognitoUserPoolClient = "41o2dh4aemkpcfcvkh6utu95n"
+    CognitoDomainPrefix = "engenius"
+    CognitoDomain = CognitoDomainPrefix + ".auth." + CognitoRegion + ".amazoncognito.com"
+    
+    url = "https://" + CognitoDomain + "/oauth2/authorize?response_type=token&client_id=" + CognitoUserPoolClient+ "&redirect_uri=https://d2tlhflz5yzmtn.cloudfront.net/index.html"
+
+    location.href=url
+}
+
 
 // 入力ボックスにフォーカスを設定
 document.getElementById("wisdom").focus();
