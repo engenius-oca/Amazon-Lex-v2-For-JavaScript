@@ -104,7 +104,6 @@ i:focus{
     border-bottom: 1px solid #777;
     border-left: 1px solid #777;
     border-right: 1px solid #777;
-    size: 10px;
     background-color: #8aa3c0;
     margin: 0 auto;
 }
@@ -130,7 +129,7 @@ i:focus{
     width: 15%;
     margin: auto ;
     margin-right: 4%; 
-    font-size: 150%;
+    font-size: 100%;
     background: #4850c2;
     color: rgb(233, 233, 233);
     display: block;
@@ -221,7 +220,7 @@ i:focus{
 
 /* 入力欄のレイアウト */
 input#wisdom {
-    font-size: 150%;
+    font-size: 100%;
 }
 
 /* PC版 */
