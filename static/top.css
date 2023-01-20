@@ -277,7 +277,7 @@ p.lexError {
     max-width: 85%;
     float: right;
     background-color: #f77;
-    font-size: 30px;
+    font-size: 50%;
 }
 /* スマホ版 */
 /* @media (max-width: 1000px) {
