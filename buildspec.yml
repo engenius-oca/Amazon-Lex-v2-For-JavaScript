@@ -3,4 +3,4 @@ version: 0.2
 phases:
   post_build:
     commands:
-      - aws s3 sync --exact-timestamps --region ap-northeast-1 ./ s3://oca-frontend --exclude ".git*" --exclude ".gitpod.yml" --exclude "README.md" --exclude "buildspec.yml" --exclude "frontend.drawio"  --delete
+      - aws s3 sync --exact-timestamps --region ap-northeast-1 ./ s3://oca-frontend/chatbot --exclude ".git*" --exclude ".gitpod.yml" --exclude "README.md" --exclude "buildspec.yml" --exclude "frontend.drawio"  --delete
