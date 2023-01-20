@@ -279,7 +279,7 @@ p.lexError {
     background-color: #f77;
     font-size: 100%;
 }
-/* スマホ版 */
+
 @media (max-width: 1000px) {
     p.userRequest {
         margin: 4px;
