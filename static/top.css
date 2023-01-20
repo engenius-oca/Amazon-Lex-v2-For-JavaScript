@@ -238,8 +238,49 @@ input::placeholder {
     }
 } */
 
-@media (max-width: 310px) {
-    /* 質問表示のレイアウト */
+/* PC版 */
+/* 質問表示のレイアウト */
+p.userRequest {
+    margin: 4px;
+    padding: 1%;
+    border-radius: 4px;
+    min-width: 50%;
+    max-width: 85%;
+    float: left;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-size: 100%;
+}
+
+/* 返信表示のレイアウト */
+p.lexResponse {
+    margin: 4px;
+    padding: 1%;
+    border-radius: 4px;
+    text-align: right;
+    min-width: 50%;
+    max-width: 85%;
+    float: right;
+    background-color: #68819e;
+    color: white;
+    font-style: italic;
+    font-size: 100%;
+}
+
+/* エラー表示のレイアウト */
+p.lexError {
+    margin: 4px;
+    padding: 1%;
+    border-radius: 4px;
+    text-align: right;
+    min-width: 50%;
+    max-width: 85%;
+    float: right;
+    background-color: #f77;
+    font-size: 100%;
+}
+
+@media screen and (min-width:768px) {
     p.userRequest {
         margin: 4px;
         padding: 1%;
@@ -249,9 +290,9 @@ input::placeholder {
         float: left;
         background-color: rgb(255, 255, 255);
         color: black;
-        font-size: 100%;
+        font-size: 40px;
     }
-
+    
     /* 返信表示のレイアウト */
     p.lexResponse {
         margin: 4px;
@@ -264,9 +305,9 @@ input::placeholder {
         background-color: #68819e;
         color: white;
         font-style: italic;
-        font-size: 100%;
+        font-size: 40px;
     }
-
+    
     /* エラー表示のレイアウト */
     p.lexError {
         margin: 4px;
@@ -277,45 +318,22 @@ input::placeholder {
         max-width: 85%;
         float: right;
         background-color: #f77;
-        font-size: 100%;
+        font-size: 40px;
     }
 }
 
-p.userRequest {
-    margin: 4px;
-    padding: 1%;
-    border-radius: 4px;
-    min-width: 50%;
-    max-width: 85%;
-    float: left;
-    background-color: rgb(255, 255, 255);
-    color: black;
-    font-size: 30px;
-}
+/*
+@media以外の所は全てのサイズで読み込まれます。
+*/
 
-p.lexResponse {
-    margin: 4px;
-    padding: 1%;
-    border-radius: 4px;
-    text-align: right;
-    min-width: 50%;
-    max-width: 85%;
-    float: right;
-    background-color: #68819e;
-    color: white;
-    font-style: italic;
-    font-size: 30px;
-}
+/*　画面サイズが480pxからはここを読み込む　*/
+/* @media screen and (min-width:480px) { 
+} */
 
-p.lexError {
-    margin: 4px;
-    padding: 1%;
-    border-radius: 4px;
-    text-align: right;
-    min-width: 50%;
-    max-width: 85%;
-    float: right;
-    background-color: #f77;
-    font-size: 30px;
-}
+/*　画面サイズが768pxから1024pxまではここを読み込む　*/
+/* @media screen and (min-width:768px) and ( max-width:1024px) {
+} */
 
+/*　画面サイズが1024pxからはここを読み込む　*/
+/* @media screen and (min-width:1024px) {
+} */
