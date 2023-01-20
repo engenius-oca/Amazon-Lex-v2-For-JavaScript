@@ -280,7 +280,7 @@ p.lexError {
     font-size: 100%;
 }
 /* スマホ版 */
-/* @media (max-width: 1000px) {
+@media (max-width: 1000px) {
     p.userRequest {
         margin: 4px;
         padding: 1%;
@@ -290,7 +290,7 @@ p.lexError {
         float: left;
         background-color: rgb(255, 255, 255);
         color: black;
-        font-size: 40px;
+        font-size: 30px;
     }
 
     p.lexResponse {
@@ -304,7 +304,7 @@ p.lexError {
         background-color: #68819e;
         color: white;
         font-style: italic;
-        font-size: 40px;
+        font-size: 30px;
     }
 
     p.lexError {
@@ -316,6 +316,6 @@ p.lexError {
         max-width: 85%;
         float: right;
         background-color: #f77;
-        font-size: 40px;
+        font-size: 30px;
     }
-} */
+}
