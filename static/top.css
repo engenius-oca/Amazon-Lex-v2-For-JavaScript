@@ -238,49 +238,8 @@ input::placeholder {
     }
 } */
 
-/* PC版 */
-/* 質問表示のレイアウト */
-p.userRequest {
-    margin: 4px;
-    padding: 1%;
-    border-radius: 4px;
-    min-width: 50%;
-    max-width: 85%;
-    float: left;
-    background-color: rgb(255, 255, 255);
-    color: black;
-    font-size: 100%;
-}
-
-/* 返信表示のレイアウト */
-p.lexResponse {
-    margin: 4px;
-    padding: 1%;
-    border-radius: 4px;
-    text-align: right;
-    min-width: 50%;
-    max-width: 85%;
-    float: right;
-    background-color: #68819e;
-    color: white;
-    font-style: italic;
-    font-size: 100%;
-}
-
-/* エラー表示のレイアウト */
-p.lexError {
-    margin: 4px;
-    padding: 1%;
-    border-radius: 4px;
-    text-align: right;
-    min-width: 50%;
-    max-width: 85%;
-    float: right;
-    background-color: #f77;
-    font-size: 100%;
-}
-
-@media (max-width: 1000px) {
+@media (max-width: 310px) {
+    /* 質問表示のレイアウト */
     p.userRequest {
         margin: 4px;
         padding: 1%;
@@ -290,9 +249,10 @@ p.lexError {
         float: left;
         background-color: rgb(255, 255, 255);
         color: black;
-        font-size: 30px;
+        font-size: 100%;
     }
 
+    /* 返信表示のレイアウト */
     p.lexResponse {
         margin: 4px;
         padding: 1%;
@@ -304,9 +264,10 @@ p.lexError {
         background-color: #68819e;
         color: white;
         font-style: italic;
-        font-size: 30px;
+        font-size: 100%;
     }
 
+    /* エラー表示のレイアウト */
     p.lexError {
         margin: 4px;
         padding: 1%;
@@ -316,6 +277,45 @@ p.lexError {
         max-width: 85%;
         float: right;
         background-color: #f77;
-        font-size: 30px;
+        font-size: 100%;
     }
 }
+
+p.userRequest {
+    margin: 4px;
+    padding: 1%;
+    border-radius: 4px;
+    min-width: 50%;
+    max-width: 85%;
+    float: left;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-size: 30px;
+}
+
+p.lexResponse {
+    margin: 4px;
+    padding: 1%;
+    border-radius: 4px;
+    text-align: right;
+    min-width: 50%;
+    max-width: 85%;
+    float: right;
+    background-color: #68819e;
+    color: white;
+    font-style: italic;
+    font-size: 30px;
+}
+
+p.lexError {
+    margin: 4px;
+    padding: 1%;
+    border-radius: 4px;
+    text-align: right;
+    min-width: 50%;
+    max-width: 85%;
+    float: right;
+    background-color: #f77;
+    font-size: 30px;
+}
+
