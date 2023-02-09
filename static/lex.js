@@ -5,7 +5,7 @@ function urlRedirect () {
     CognitoDomainPrefix = "engenius"
     CognitoDomain = CognitoDomainPrefix + ".auth." + CognitoRegion + ".amazoncognito.com"
     
-    url = "https://" + CognitoDomain + "/oauth2/authorize?response_type=token&client_id=" + CognitoUserPoolClient+ "&redirect_uri=https://d2tlhflz5yzmtn.cloudfront.net/index.html"
+    url = "https://" + CognitoDomain + "/oauth2/authorize?response_type=token&client_id=" + CognitoUserPoolClient+ "&redirect_uri=https://chatbot.japan-is.fun/chatbot/index.html"
 
     location.href=url
 }
